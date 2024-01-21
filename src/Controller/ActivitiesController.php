@@ -61,7 +61,7 @@ class ActivitiesController extends AbstractController
         return $this->json($activities);
     }
 
-    #[Route('/activities/{activity_type_id}/{date_start}/{monitors}', name: 'create_activity', methods: ['POST'])]
+    #[Route('/activities/create/{activity_type_id}/{date_start}/{monitors}', name: 'create_activity', methods: ['POST'])]
     public function createActivity(
         $activity_type_id,
         $date_start,
@@ -137,7 +137,7 @@ class ActivitiesController extends AbstractController
         return $this->json($responseData);
     }
 
-    #[Route('/activities/{id}/{activity_type_id}/{monitors}', name: 'edit_activity', methods: ['PUT'])]
+    #[Route('/activities/edit/{id}/{activity_type_id}/{monitors}', name: 'edit_activity', methods: ['PUT'])]
     public function editActivity(
         $id,
         $activity_type_id,
@@ -193,7 +193,7 @@ class ActivitiesController extends AbstractController
         return $this->json($responseData);
     }
 
-    #[Route('/activities/{id}', name: 'delete_activity', methods: ['DELETE'])]
+    #[Route('/activities/delete/{id}', name: 'delete_activity', methods: ['DELETE'])]
     public function deleteActivity(
         $id,
         EntityManagerInterface $entityManager

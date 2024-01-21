@@ -33,7 +33,7 @@ class MonitorsController extends AbstractController
         return $this->json($data);
     }
 
-    #[Route('/monitors/{name}/{email}/{phone}/{photo}', name: 'create_monitor', methods: ['POST'])]
+    #[Route('/monitors/create/{name}/{email}/{phone}/{photo}', name: 'create_monitor', methods: ['POST'])]
     public function createMonitor(
         $name,
         $email,
@@ -86,7 +86,7 @@ class MonitorsController extends AbstractController
     }
 
 
-    #[Route('/monitors/{id}/{name}/{email}/{phone}/{photo}', name: 'edit_monitor', methods: ['PUT'])]
+    #[Route('/monitors/edit/{id}/{name}/{email}/{phone}/{photo}', name: 'edit_monitor', methods: ['PUT'])]
     public function editMonitor(
         $id,
         $name,
@@ -147,7 +147,7 @@ class MonitorsController extends AbstractController
         return $this->json($responseData);
     }
 
-    #[Route('/monitors/{id}', name: 'delete_monitor', methods: ['DELETE'])]
+    #[Route('/monitors/delete/{id}', name: 'delete_monitor', methods: ['DELETE'])]
     public function deleteMonitor(
         $id,
         EntityManagerInterface $entityManager,
